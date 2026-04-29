@@ -1,22 +1,34 @@
 # The Parents Guide to AI Safety
 
-This repository contains a GitHub Pages site for a parents' guide to AI safety.
+A practical, no-fluff guide designed to help parents understand and manage the real risks of artificial intelligence in their children’s digital lives.
 
-## Files
-- `index.html` — the published sales page
+## 🌐 Live Site
 
-## Published site
-- https://chrisemmanuel.github.io/The-Parents-Guide-to-AISafety/
+Access the full sales page here:
+https://chrisemmanuel.github.io/The-Parents-Guide-to-AISafety/
 
-## How to update
-1. Edit `index.html`.
-2. Stage and commit your changes:
-   ```powershell
-   git add index.html README.md
-   git commit -m "Add README"
-   git push
-   ```
+## 📘 About the Guide
 
-## Notes
-- GitHub Pages serves `index.html` from the repository root.
-- If you add more pages, link them from `index.html` or update the site structure accordingly.
+Children are already interacting with AI—through apps, chat tools, and content platforms—often without full parental awareness.
+
+This guide breaks down what’s actually happening behind the scenes and what parents can do about it.
+
+## ⚠️ What You’ll Learn
+
+* How children are really using AI today (beyond common assumptions)
+* How AI can be used to impersonate people and generate harmful content
+* Warning signs your child may already be exposed
+* Practical boundaries you can set without technical knowledge
+* Tools and controls you can apply immediately
+
+## 🎯 Who This Is For
+
+Parents raising children in a digital environment who want to stay informed, proactive, and in control—without needing a tech background.
+
+## 🗂 Project Structure
+
+* `index.html` — Main sales page
+
+## 🚀 Purpose
+
+This repository hosts a GitHub Pages site for a digital product focused on AI safety awareness for parents.
