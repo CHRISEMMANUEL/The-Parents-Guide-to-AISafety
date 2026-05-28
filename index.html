@@ -1,4 +1,9 @@
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Parent's Guide to AI Safety</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500&display=swap');
   *{box-sizing:border-box;margin:0;padding:0}
@@ -8,74 +13,74 @@
     --cream:#F9FAFB;--dark:#111827;--gray:#6B7280;--lgray:#F3F4F6;
     --border:#E5E7EB;
   }
-  body{font-family:'Inter',sans-serif;color:var(--dark);background:#fff;line-height:1.7}
+  body{font-family:'Inter',sans-serif;color:var(--dark);background:#fff;line-height:1.7;font-size:16px}
 
   .hero{background:var(--green);color:#fff;padding:56px 32px 48px;text-align:center;position:relative;overflow:hidden}
   .hero::before{content:'';position:absolute;top:-60px;right:-60px;width:260px;height:260px;border-radius:50%;background:rgba(255,255,255,0.04)}
   .hero::after{content:'';position:absolute;bottom:-80px;left:-40px;width:200px;height:200px;border-radius:50%;background:rgba(245,158,11,0.08)}
-  .badge{display:inline-block;background:var(--orange);color:#000;font-family:'Sora',sans-serif;font-size:11px;font-weight:700;letter-spacing:.08em;padding:6px 16px;border-radius:100px;margin-bottom:20px;text-transform:uppercase}
-  .hero h1{font-family:'Sora',sans-serif;font-size:clamp(26px,5vw,38px);font-weight:800;line-height:1.15;margin-bottom:14px;max-width:640px;margin-left:auto;margin-right:auto}
+  .badge{display:inline-block;background:var(--orange);color:#000;font-family:'Sora',sans-serif;font-size:12px;font-weight:700;letter-spacing:.08em;padding:6px 16px;border-radius:100px;margin-bottom:20px;text-transform:uppercase}
+  .hero h1{font-family:'Sora',sans-serif;font-size:clamp(30px,6vw,44px);font-weight:800;line-height:1.15;margin-bottom:14px;max-width:640px;margin-left:auto;margin-right:auto}
   .hero h1 span{color:var(--orange)}
-  .hero-sub{font-size:16px;color:rgba(255,255,255,0.78);max-width:520px;margin:0 auto 28px;line-height:1.65}
+  .hero-sub{font-size:18px;color:rgba(255,255,255,0.78);max-width:520px;margin:0 auto 28px;line-height:1.65}
   .hero-price{display:flex;align-items:center;justify-content:center;gap:12px;margin-bottom:28px}
-  .price-main{font-family:'Sora',sans-serif;font-size:36px;font-weight:800;color:var(--orange)}
-  .price-note{font-size:13px;color:rgba(255,255,255,0.55);line-height:1.4;text-align:left}
-  .cta-btn{display:inline-block;background:var(--orange);color:#000;font-family:'Sora',sans-serif;font-weight:700;font-size:15px;padding:14px 36px;border-radius:8px;text-decoration:none;letter-spacing:.02em;transition:opacity .15s}
+  .price-main{font-family:'Sora',sans-serif;font-size:40px;font-weight:800;color:var(--orange)}
+  .price-note{font-size:14px;color:rgba(255,255,255,0.55);line-height:1.4;text-align:left}
+  .cta-btn{display:inline-block;background:var(--orange);color:#000;font-family:'Sora',sans-serif;font-weight:700;font-size:16px;padding:16px 40px;border-radius:8px;text-decoration:none;letter-spacing:.02em;transition:opacity .15s}
   .cta-btn:hover{opacity:.9}
-  .hero-meta{margin-top:20px;font-size:12px;color:rgba(255,255,255,0.45);display:flex;gap:20px;justify-content:center;flex-wrap:wrap}
+  .hero-meta{margin-top:20px;font-size:14px;color:rgba(255,255,255,0.45);display:flex;gap:20px;justify-content:center;flex-wrap:wrap}
   .hero-meta span::before{content:'✓ '}
 
   .section{padding:48px 32px;max-width:700px;margin:0 auto}
-  .section-label{font-family:'Sora',sans-serif;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--green-mid);margin-bottom:8px}
-  .section h2{font-family:'Sora',sans-serif;font-size:clamp(20px,4vw,26px);font-weight:700;line-height:1.25;margin-bottom:20px;color:var(--green)}
+  .section-label{font-family:'Sora',sans-serif;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--green-mid);margin-bottom:8px}
+  .section h2{font-family:'Sora',sans-serif;font-size:clamp(22px,5vw,30px);font-weight:700;line-height:1.25;margin-bottom:20px;color:var(--green)}
 
   .pain-box{background:var(--lgray);border-left:4px solid var(--orange);border-radius:0 8px 8px 0;padding:20px 24px;margin-bottom:12px}
-  .pain-box p{font-size:15px;color:var(--dark);line-height:1.6}
+  .pain-box p{font-size:17px;color:var(--dark);line-height:1.6}
   .pain-box p strong{color:var(--green)}
 
   .what-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;margin-top:8px}
   .what-card{background:var(--green-soft);border:1px solid #C3E1D4;border-radius:10px;padding:16px 18px}
-  .what-card .num{font-family:'Sora',sans-serif;font-size:11px;font-weight:700;color:var(--green-mid);margin-bottom:6px}
-  .what-card p{font-size:14px;color:var(--dark);line-height:1.55}
+  .what-card .num{font-family:'Sora',sans-serif;font-size:12px;font-weight:700;color:var(--green-mid);margin-bottom:6px}
+  .what-card p{font-size:16px;color:var(--dark);line-height:1.55}
   .what-card p strong{color:var(--green)}
 
   .quote-block{background:var(--green);border-radius:12px;padding:28px 28px;margin:8px 0;text-align:center}
-  .quote-block q{font-family:'Sora',sans-serif;font-size:17px;font-weight:600;color:#fff;line-height:1.5;font-style:normal}
-  .quote-block .attr{font-size:12px;color:rgba(255,255,255,0.5);margin-top:10px}
+  .quote-block q{font-family:'Sora',sans-serif;font-size:19px;font-weight:600;color:#fff;line-height:1.5;font-style:normal}
+  .quote-block .attr{font-size:14px;color:rgba(255,255,255,0.5);margin-top:10px}
 
   .toc-list{list-style:none;display:flex;flex-direction:column;gap:8px}
-  .toc-list li{display:flex;align-items:flex-start;gap:12px;padding:12px 16px;background:var(--lgray);border-radius:8px;font-size:14px}
-  .toc-list li .tag{flex-shrink:0;background:var(--green);color:#fff;font-family:'Sora',sans-serif;font-size:10px;font-weight:700;padding:3px 10px;border-radius:100px;margin-top:2px}
+  .toc-list li{display:flex;align-items:flex-start;gap:12px;padding:12px 16px;background:var(--lgray);border-radius:8px;font-size:16px}
+  .toc-list li .tag{flex-shrink:0;background:var(--green);color:#fff;font-family:'Sora',sans-serif;font-size:12px;font-weight:700;padding:3px 10px;border-radius:100px;margin-top:2px}
   .toc-list li .tag.bonus{background:var(--orange);color:#000}
-  .toc-list li strong{display:block;color:var(--dark);font-weight:500;font-size:14px}
-  .toc-list li span{font-size:12px;color:var(--gray)}
+  .toc-list li strong{display:block;color:var(--dark);font-weight:500;font-size:16px}
+  .toc-list li span{font-size:14px;color:var(--gray)}
 
   .faq-item{border-bottom:1px solid var(--border);padding:16px 0}
   .faq-item:last-child{border-bottom:none}
-  .faq-item strong{display:block;font-family:'Sora',sans-serif;font-weight:600;font-size:15px;color:var(--green);margin-bottom:6px}
-  .faq-item p{font-size:14px;color:var(--gray);line-height:1.65}
+  .faq-item strong{display:block;font-family:'Sora',sans-serif;font-weight:600;font-size:17px;color:var(--green);margin-bottom:6px}
+  .faq-item p{font-size:16px;color:var(--gray);line-height:1.65}
 
   .for-who{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px}
-  .for-card{border:1px solid var(--border);border-radius:10px;padding:16px;font-size:14px;line-height:1.6;color:var(--dark)}
-  .for-card .icon{font-size:22px;margin-bottom:8px}
-  .for-card strong{display:block;font-family:'Sora',sans-serif;font-size:13px;font-weight:700;color:var(--green);margin-bottom:4px}
+  .for-card{border:1px solid var(--border);border-radius:10px;padding:16px;font-size:16px;line-height:1.6;color:var(--dark)}
+  .for-card .icon{font-size:24px;margin-bottom:8px}
+  .for-card strong{display:block;font-family:'Sora',sans-serif;font-size:15px;font-weight:700;color:var(--green);margin-bottom:4px}
 
   .cta-bottom{background:var(--green);padding:48px 32px;text-align:center}
-  .cta-bottom h2{font-family:'Sora',sans-serif;font-size:clamp(20px,4vw,28px);font-weight:800;color:#fff;margin-bottom:10px}
-  .cta-bottom p{font-size:15px;color:rgba(255,255,255,0.7);margin-bottom:24px;max-width:480px;margin-left:auto;margin-right:auto}
+  .cta-bottom h2{font-family:'Sora',sans-serif;font-size:clamp(22px,5vw,30px);font-weight:800;color:#fff;margin-bottom:10px}
+  .cta-bottom p{font-size:17px;color:rgba(255,255,255,0.7);margin-bottom:24px;max-width:480px;margin-left:auto;margin-right:auto}
   .cta-bottom .cta-btn{display:inline-block}
 
   .divider{height:1px;background:var(--border);margin:0 32px}
   .author-strip{padding:20px 32px;max-width:700px;margin:0 auto;display:flex;align-items:center;gap:16px}
-  .author-avatar{width:44px;height:44px;border-radius:50%;background:var(--green);display:flex;align-items:center;justify-content:center;font-family:'Sora',sans-serif;font-size:14px;font-weight:700;color:#fff;flex-shrink:0}
-  .author-info p{font-size:13px;color:var(--gray);line-height:1.5}
-  .author-info strong{font-size:14px;font-weight:500;color:var(--dark)}
+  .author-avatar{width:48px;height:48px;border-radius:50%;background:var(--green);display:flex;align-items:center;justify-content:center;font-family:'Sora',sans-serif;font-size:16px;font-weight:700;color:#fff;flex-shrink:0}
+  .author-info p{font-size:15px;color:var(--gray);line-height:1.5}
+  .author-info strong{font-size:16px;font-weight:500;color:var(--dark)}
 
   .stat-row{display:flex;gap:0;border:1px solid var(--border);border-radius:10px;overflow:hidden;margin-top:8px}
   .stat{flex:1;padding:16px 12px;text-align:center;border-right:1px solid var(--border)}
   .stat:last-child{border-right:none}
-  .stat .n{font-family:'Sora',sans-serif;font-size:22px;font-weight:800;color:var(--green)}
-  .stat .l{font-size:11px;color:var(--gray);margin-top:2px}
+  .stat .n{font-family:'Sora',sans-serif;font-size:26px;font-weight:800;color:var(--green)}
+  .stat .l{font-size:13px;color:var(--gray);margin-top:2px}
 
   @media(max-width:480px){
     .hero{padding:40px 20px 36px}
@@ -88,6 +93,8 @@
     .stat:last-child{border-bottom:none}
   }
 </style>
+</head>
+<body>
 
 <div class="hero">
   <div class="badge">New Release — 2026 Edition</div>
@@ -198,27 +205,20 @@
 <div class="divider"></div>
 
 <div class="author-strip">
- <style>
-  *{box-sizing:border-box;margin:0;padding:0}
-  :root{--green:#0E4D3A;--green-mid:#1A6B52;--green-soft:#E8F5EE;--orange:#F59E0B;--border:#E5E7EB;--gray:#6B7280;--lgray:#F3F4F6}
-  body{font-family:var(--font-sans,sans-serif)}
-</style>
-
-<div style="border-top:0.5px solid var(--color-border-tertiary);border-bottom:0.5px solid var(--color-border-tertiary);padding:20px 0;display:flex;align-items:flex-start;gap:16px">
-  <div style="width:48px;height:48px;border-radius:50%;background:#0E4D3A;display:flex;align-items:center;justify-content:center;font-weight:500;font-size:15px;color:#fff;flex-shrink:0">CE</div>
+<div style="border-top:0.5px solid var(--border);border-bottom:0.5px solid var(--border);padding:20px 0;display:flex;align-items:flex-start;gap:16px;width:100%">
+  <div style="width:48px;height:48px;border-radius:50%;background:#0E4D3A;display:flex;align-items:center;justify-content:center;font-weight:500;font-size:17px;color:#fff;flex-shrink:0">CE</div>
   <div>
-    <p style="font-weight:500;font-size:15px;color:var(--color-text-primary);margin:0 0 4px">Emmanuel Chris O.</p>
-    <p style="font-size:13px;color:var(--color-text-secondary);margin:0 0 8px">AI Safety Fellow & Software AI Engineer</p>
-    <p style="font-size:13px;color:var(--color-text-secondary);line-height:1.6;margin:0">Researcher in AI safety and LLM evaluation. Co-founder of <strong style="color:var(--color-text-primary);font-weight:500">TechInstant</strong> and Programme Coordinator at EdTech platform <strong style="color:var(--color-text-primary);font-weight:500">YungDoyen</strong>. Speaks on AI literacy across Nigeria and the African tech community.</p>
+    <p style="font-weight:500;font-size:17px;color:var(--dark);margin:0 0 4px">Emmanuel Chris O.</p>
+    <p style="font-size:15px;color:var(--gray);margin:0 0 8px">AI Safety Fellow & Software AI Engineer</p>
+    <p style="font-size:15px;color:var(--gray);line-height:1.6;margin:0">Researcher in AI safety and LLM evaluation. Co-founder of <strong style="color:var(--dark);font-weight:500">TechInstant</strong> and Programme Coordinator at EdTech platform <strong style="color:var(--dark);font-weight:500">YungDoyen</strong>. Speaks on AI literacy across Nigeria and the African tech community.</p>
     <div style="display:flex;gap:8px;margin-top:12px;flex-wrap:wrap">
-      <span style="font-size:11px;font-weight:500;background:#E8F5EE;color:#0E4D3A;padding:4px 10px;border-radius:100px">AI Safety Fellow</span>
-      <span style="font-size:11px;font-weight:500;background:#E8F5EE;color:#0E4D3A;padding:4px 10px;border-radius:100px">Co-founder, TechInstant</span>
-      <span style="font-size:11px;font-weight:500;background:#E8F5EE;color:#0E4D3A;padding:4px 10px;border-radius:100px">YungDoyen</span>
-      <span style="font-size:11px;font-weight:500;background:#FEF3C7;color:#B45309;padding:4px 10px;border-radius:100px">AI Literacy Advocate</span>
+      <span style="font-size:13px;font-weight:500;background:#E8F5EE;color:#0E4D3A;padding:4px 10px;border-radius:100px">AI Safety Fellow</span>
+      <span style="font-size:13px;font-weight:500;background:#E8F5EE;color:#0E4D3A;padding:4px 10px;border-radius:100px">Co-founder, TechInstant</span>
+      <span style="font-size:13px;font-weight:500;background:#E8F5EE;color:#0E4D3A;padding:4px 10px;border-radius:100px">YungDoyen</span>
+      <span style="font-size:13px;font-weight:500;background:#FEF3C7;color:#B45309;padding:4px 10px;border-radius:100px">AI Literacy Advocate</span>
     </div>
   </div>
 </div>
-
 </div>
 
 <div class="divider"></div>
@@ -227,5 +227,7 @@
   <h2>Your child deserves a parent who is prepared.</h2>
   <p>For the cost of a family dinner, get the only AI parenting guide written specifically for 2026 — practical, clear, and immediately usable.</p>
   <a class="cta-btn" href="https://selar.com/k147aayy7t" target="_blank">Buy Now — ₦7,500 </a>
-  <p style="font-size:12px;color:rgba(255,255,255,0.4);margin-top:16px;margin-bottom:0">Instant PDF download after payment • Works on any device • One-time purchase</p>
+  <p style="font-size:14px;color:rgba(255,255,255,0.4);margin-top:16px;margin-bottom:0">Instant PDF download after payment • Works on any device • One-time purchase</p>
 </div>
+</body>
+</html>
